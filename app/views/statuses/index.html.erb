@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+ 
+<% @statuses.each do |status| %>
+	<div class="status">
+		<p>Posted by <%= status.name %> • <%= time_ago_in_words(status.created_at) + " ago" %></p>
+		<%= link_to (status) do %>
+		  <h2><%= status.content %></h2>
+		<% end %>
+		<div class="admin">
+			<%= link_to 'Edit', edit_status_path(status) %> 
+			<%= link_to 'Delete', status, method: :delete, data: { confirm: 'Are you sure?' } %>
+		</div>
+	</div>
+<% end %>
+ 
+
+<%= link_to 'New Status', new_status_path %>

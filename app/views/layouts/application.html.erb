@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fanblah</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  
+  <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+</head>
+<body>
+	
+	<header>
+		<div class="container">
+			<div class="logo"><img src="<%= image_path('logo.png') %>" alt="FanBlah"/></div>
+			<nav>
+				<ul>
+					<li>Sign Up</li>
+					<li>|</li>
+					<li>Login</li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+	<div class="container">
+		<%= yield %>
+	</div>
+
+</body>
+</html>
